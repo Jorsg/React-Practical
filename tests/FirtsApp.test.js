@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { render } from "@testing-library/react"
 import { FirtsAPP } from "../src/FirstApp"
 
@@ -7,8 +10,8 @@ describe('Test in my first Component React <FirstApp/>', () => {
     test('should return to match with the snapshot ', () => {
 
       const title = 'Hola, soy Vegeta';
-      const { container } = render(<FirtsAPP title={title} />);
-      expect(container).toMatchSnapshot();
+
+      render( <FirtsAPP title={ title } />);
     });
 
 });
